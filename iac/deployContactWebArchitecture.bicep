@@ -15,7 +15,7 @@ param sqlServerAdminLogin string
 param sqlServerAdminPassword string
 param clientIPAddress string
 
-// param logAnalyticsWorkspaceName string
+param logAnalyticsWorkspaceName string
 // param appInsightsName string
 
 // param webAppName string
@@ -43,14 +43,14 @@ module contactWebDatabase 'azureSQL.bicep' = {
   }
 }
 
-// module contactWebAnalyticsWorkspace 'logAnalyticsWorkspace.bicep' = {
-//   name: '${logAnalyticsWorkspaceName}-deployment'
-//   scope: contactWebResourceGroup
-//   params: {
-//     location: contactWebResourceGroup.location
-//     logAnalyticsWorkspaceName: logAnalyticsWorkspaceName
-//   }
-// }
+module contactWebAnalyticsWorkspace 'logAnalyticsWorkspace.bicep' = {
+  name: '${logAnalyticsWorkspaceName}-deployment'
+  scope: contactWebResourceGroup
+  params: {
+    location: contactWebResourceGroup.location
+    logAnalyticsWorkspaceName: logAnalyticsWorkspaceName
+  }
+}
 
 // module contactWebApplicationInsights 'applicationInsights.bicep' = {
 //   name: '${appInsightsName}-deployment'
