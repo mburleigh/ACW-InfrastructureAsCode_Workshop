@@ -7,25 +7,25 @@
         },
         "location": {
             "value": "eastus"
+        },
+        "uniqueIdentifier": {
+            "value": "20291231acw"
+        },
+        "sqlServerName": {
+            "value": "ContactWebDBServer"
+        },
+        "sqlDatabaseName": {
+            "value": "ContactWebDB"
+        },
+        "sqlServerAdminLogin": {
+            "value": "contactwebdbuser"
+        },
+        "sqlServerAdminPassword": {
+            "value": "workshopDbPwd#54321!"
+        },
+        "clientIPAddress": {
+            "value": "153.106.237.15"
         }//,
-        // "uniqueIdentifier": {
-        //     "value": "20291231acw"
-        // },
-        // "sqlServerName": {
-        //     "value": "ContactWebDBServer"
-        // },
-        // "sqlDatabaseName": {
-        //     "value": "ContactWebDB"
-        // },
-        // "sqlServerAdminLogin": {
-        //     "value": "contactwebdbuser"
-        // },
-        // "sqlServerAdminPassword": {
-        //     "value": "workshopDbPwd#54321!"
-        // },
-        // "clientIPAddress": {
-        //     "value": "169.197.65.186"
-        // },
         // "logAnalyticsWorkspaceName": {
         //     "value": "contactWebAnalytics"
         // },
