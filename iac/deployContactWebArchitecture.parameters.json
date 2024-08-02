@@ -28,10 +28,10 @@
         },
         "logAnalyticsWorkspaceName": {
             "value": "contactWebAnalytics"
+        },
+        "appInsightsName": {
+            "value": "contactWebAppInsights"
         }//,
-        // "appInsightsName": {
-        //     "value": "contactWebAppInsights"
-        // },
         // "appServicePlanName": {
         //     "value": "contactWebASP"
         // },

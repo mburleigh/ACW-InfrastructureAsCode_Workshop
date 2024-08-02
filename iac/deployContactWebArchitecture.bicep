@@ -16,7 +16,7 @@ param sqlServerAdminPassword string
 param clientIPAddress string
 
 param logAnalyticsWorkspaceName string
-// param appInsightsName string
+param appInsightsName string
 
 // param webAppName string
 // param appServicePlanName string
@@ -52,15 +52,15 @@ module contactWebAnalyticsWorkspace 'logAnalyticsWorkspace.bicep' = {
   }
 }
 
-// module contactWebApplicationInsights 'applicationInsights.bicep' = {
-//   name: '${appInsightsName}-deployment'
-//   scope: contactWebResourceGroup
-//   params: {
-//     location: contactWebResourceGroup.location
-//     appInsightsName: appInsightsName
-//     logAnalyticsWorkspaceId: contactWebAnalyticsWorkspace.outputs.logAnalyticsWorkspaceId
-//   }
-// }
+module contactWebApplicationInsights 'applicationInsights.bicep' = {
+  name: '${appInsightsName}-deployment'
+  scope: contactWebResourceGroup
+  params: {
+    location: contactWebResourceGroup.location
+    appInsightsName: appInsightsName
+    logAnalyticsWorkspaceId: contactWebAnalyticsWorkspace.outputs.logAnalyticsWorkspaceId
+  }
+}
 
 // module contactWebApplicationPlanAndSite 'contactWebAppService.bicep' = {
 //   name: '${webAppName}-deployment'
