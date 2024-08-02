@@ -1,0 +1,14 @@
+az login --tenant 6ecde7e4-d8ec-4d71-91a6-1000fd307cdd
+
+az deployment group create -g iac-workshop-bccode `
+  --template-file "D:\Repos\GitHub\ACW-InfrastructureAsCode_Workshop\iac\storageAccount.bicep"
+
+az deployment group create -g iac-workshop-bccode `
+  --template-file "D:\Repos\GitHub\ACW-InfrastructureAsCode_Workshop\iac\storageAccount.bicep" `
+  --parameters "D:\Repos\GitHub\ACW-InfrastructureAsCode_Workshop\iac\storageAccount.parameters.json
+
+az deployment sub create -h
+
+az deployment sub create -n bcc24 -l eastus`
+  --template-file "D:\Repos\GitHub\ACW-InfrastructureAsCode_Workshop\iac\deployAll.bicep" `
+  --parameters "D:\Repos\GitHub\ACW-InfrastructureAsCode_Workshop\iac\deployAll.parameters.json
