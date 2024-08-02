@@ -22,7 +22,7 @@ param webAppName string
 param appServicePlanName string
 param appServicePlanSku string
 
-// param keyVaultName string
+param keyVaultName string
 
 resource contactWebResourceGroup 'Microsoft.Resources/resourceGroups@2018-05-01' = {
   name: rgName
@@ -75,16 +75,16 @@ module contactWebApplicationPlanAndSite 'contactWebAppService.bicep' = {
   }
 }
 
-// module contactWebVault 'keyVault.bicep' = {
-//   name: '${keyVaultName}-deployment'
-//   scope: contactWebResourceGroup
-//   params: {
-//     location: contactWebResourceGroup.location
-//     uniqueIdentifier: uniqueIdentifier
-//     webAppFullName: contactWebApplicationPlanAndSite.outputs.webAppFullName
-//     databaseServerName: contactWebDatabase.outputs.sqlServerName
-//     keyVaultName: keyVaultName
-//     sqlDatabaseName: sqlDatabaseName
-//     sqlServerAdminPassword: sqlServerAdminPassword
-//   }
-// }
+module contactWebVault 'keyVault.bicep' = {
+  name: '${keyVaultName}-deployment'
+  scope: contactWebResourceGroup
+  params: {
+    location: contactWebResourceGroup.location
+    uniqueIdentifier: uniqueIdentifier
+    webAppFullName: contactWebApplicationPlanAndSite.outputs.webAppFullName
+    databaseServerName: contactWebDatabase.outputs.sqlServerName
+    keyVaultName: keyVaultName
+    sqlDatabaseName: sqlDatabaseName
+    sqlServerAdminPassword: sqlServerAdminPassword
+  }
+}

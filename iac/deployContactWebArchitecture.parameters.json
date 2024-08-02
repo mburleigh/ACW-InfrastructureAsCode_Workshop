@@ -40,9 +40,9 @@
         },
         "webAppName": {
             "value": "ContactWeb"
-        }//,
-        // "keyVaultName": {
-        //     "value": "KV-ContactWeb"
-        // }
+        },
+        "keyVaultName": {
+            "value": "KV-ContactWeb"
+        }
     }
 }
