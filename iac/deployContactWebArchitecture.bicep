@@ -18,9 +18,9 @@ param clientIPAddress string
 param logAnalyticsWorkspaceName string
 param appInsightsName string
 
-// param webAppName string
-// param appServicePlanName string
-// param appServicePlanSku string
+param webAppName string
+param appServicePlanName string
+param appServicePlanSku string
 
 // param keyVaultName string
 
@@ -62,18 +62,18 @@ module contactWebApplicationInsights 'applicationInsights.bicep' = {
   }
 }
 
-// module contactWebApplicationPlanAndSite 'contactWebAppService.bicep' = {
-//   name: '${webAppName}-deployment'
-//   scope: contactWebResourceGroup
-//   params: {
-//     location: contactWebResourceGroup.location
-//     uniqueIdentifier: uniqueIdentifier
-//     appInsightsName: contactWebApplicationInsights.outputs.applicationInsightsName
-//     appServicePlanName: appServicePlanName
-//     appServicePlanSku: appServicePlanSku
-//     webAppName: webAppName
-//   }
-// }
+module contactWebApplicationPlanAndSite 'contactWebAppService.bicep' = {
+  name: '${webAppName}-deployment'
+  scope: contactWebResourceGroup
+  params: {
+    location: contactWebResourceGroup.location
+    uniqueIdentifier: uniqueIdentifier
+    appInsightsName: contactWebApplicationInsights.outputs.applicationInsightsName
+    appServicePlanName: appServicePlanName
+    appServicePlanSku: appServicePlanSku
+    webAppName: webAppName
+  }
+}
 
 // module contactWebVault 'keyVault.bicep' = {
 //   name: '${keyVaultName}-deployment'
