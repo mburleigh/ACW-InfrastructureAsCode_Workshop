@@ -25,10 +25,10 @@
         },
         "clientIPAddress": {
             "value": "153.106.237.15"
+        },
+        "logAnalyticsWorkspaceName": {
+            "value": "contactWebAnalytics"
         }//,
-        // "logAnalyticsWorkspaceName": {
-        //     "value": "contactWebAnalytics"
-        // },
         // "appInsightsName": {
         //     "value": "contactWebAppInsights"
         // },
